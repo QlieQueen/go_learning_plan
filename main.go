@@ -44,12 +44,21 @@ func listChapters() ([]Chapter, error) {
 	return chapters, nil
 }
 
+// noCache 给响应加 Cache-Control: no-cache
+// 让浏览器每次使用缓存前先向服务器校验，避免章节更新后页面还是旧内容
+func noCache(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Cache-Control", "no-cache")
+		next.ServeHTTP(w, r)
+	})
+}
+
 func main() {
 	// 静态资源（style.css / script.js）
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.Handle("/static/", http.StripPrefix("/static/", noCache(http.FileServer(http.Dir("static")))))
 
 	// 章节 Markdown 原文（前端用 marked.js 渲染成 HTML）
-	http.Handle("/chapters/", http.StripPrefix("/chapters/", http.FileServer(http.Dir("chapters"))))
+	http.Handle("/chapters/", http.StripPrefix("/chapters/", noCache(http.FileServer(http.Dir("chapters")))))
 
 	// 章节列表 API：返回 chapters/ 下的所有 .md 文件名
 	http.HandleFunc("/api/chapters", func(w http.ResponseWriter, r *http.Request) {

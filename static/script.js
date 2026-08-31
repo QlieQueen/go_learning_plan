@@ -1,6 +1,6 @@
 // 加载章节列表到侧边栏
 async function loadChapters() {
-    const res = await fetch('/api/chapters');
+    const res = await fetch('/api/chapters?_=' + Date.now());  // 时间戳防缓存
     const chapters = await res.json();
 
     const nav = document.getElementById('chapter-list');
@@ -16,7 +16,7 @@ async function loadChapters() {
 
 // 加载并渲染一章 Markdown
 async function loadChapter(file) {
-    const res = await fetch('/chapters/' + encodeURIComponent(file));
+    const res = await fetch('/chapters/' + encodeURIComponent(file) + '?_=' + Date.now());  // 时间戳防缓存
     if (!res.ok) {
         document.getElementById('content').textContent = '加载失败: ' + res.status;
         return;
