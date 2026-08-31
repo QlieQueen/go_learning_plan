@@ -18,6 +18,10 @@ type Counter struct {
 	Num int
 }
 
+func NewCounter(val int) *Counter {
+	return &Counter{Num: val}
+}
+
 func (c Counter) Add(x int) {
 	c.Num += x
 }
@@ -44,9 +48,15 @@ func main() {
 	// 题目1
 	c := Counter{Num: 100}
 	c.Add(100)
-	fmt.Println(c.Num) // 100
+	fmt.Println("c.Num:", c.Num) // 100
 	c.Inc(100)
-	fmt.Println(c.Num) // 200
+	fmt.Println("c.Num:", c.Num) // 200
+
+	c1 := NewCounter(10)
+	c1.Add(100)
+	fmt.Println("c1.Num:", c1.Num) // 没有效果，仍然是10
+	c1.Inc(100)
+	fmt.Println("c1.Num:", c1.Num) // 生效，110
 
 	// 题目2
 	// User{Name: "x", Age: 18}.Birthday() // 报错 cannot call pointer method Birthday on User
