@@ -61,6 +61,7 @@ func main() {
 
 	// 题目4
 	var m4 map[string]int
+	fmt.Println(m4["x"])
 	m4["a"] = 1
 
 }

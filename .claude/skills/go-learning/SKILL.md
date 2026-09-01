@@ -25,7 +25,8 @@ description: "深入 Go 并发与语言哲学：用户提问/发表理解 → �
 - ✅ 第四章 4.3 select 部分（单 goroutine 同 channel：死锁/随机）
 - ✅ 第一章 安装与环境搭建（直接补充成文，未走学习循环——已有环境）
 - ✅ 第二章 Part1-5 已学已沉淀：变量/常量/iota、string（rune=编号 string=编码、UTF-8 自同步）、struct 与方法、slice（三字段/窗口共享/扩容规则）、map（nil vs 空、零值陷阱、类型名vs复合字面量）
-- ⬜ **下一步：第二章 Part6 控制流**（Part7 函数，学完沉淀章节 02 收尾）
+- ✅ 第二章 Part6 控制流已学已沉淀：if 初始化作用域、for 唯一循环三种形态、switch 顺序匹配/表达式case/fallthrough（不重新求值）/无条件=if-else链、break只退switch、label 跳出多层 → `chapters/03-控制结构.md`
+- ⬜ **下一步：Part7 函数**（多返回值、闭包、defer 基础，学完沉淀 `chapters/04-函数与方法.md`）
 
 完整章节见 `CLAUDE.md`（一语言基础 → 二语法糖 → 三数据结构 → 四控制流 → 五协程调度 → 六定时器 → 七并发控制 → 八接口 → 九内存 → 十工程）。
 
