@@ -28,7 +28,8 @@ description: "深入 Go 并发与语言哲学：用户提问/发表理解 → �
 - ✅ 第二章 Part6 控制流已学已沉淀：if 初始化作用域、for 唯一循环三种形态、switch 顺序匹配/表达式case/fallthrough（不重新求值）/无条件=if-else链、break只退switch、label 跳出多层 → `chapters/03-控制结构.md`
 - ✅ Part7 函数已学已沉淀：多返回值/命名返回值、一切传值(slice/map传"心脏")、闭包按引用共享 + Go1.22 循环变量新语义、defer(LIFO+参数立即求值+改命名返回值的时序) → `chapters/04-函数与方法.md`
 - ✅ Part8 语法糖(:= + 变参)已学已沉淀：`:=`⇔var简写、左侧至少一个新变量/err惯用法、复用vs遮蔽(同层大括号复用/跨层遮蔽)、`...`变参⇔slice、append真相 → `chapters/06-语法糖与编译还原.md`
-- ⬜ **下一步：Part9 语法糖 —— for range 编译还原 / make vs new / 复合字面量 / 指针自动解引用，逐个推进，续写 chapters/06**
+- ✅ Part9 make vs new 已学已沉淀：make只服务slice/map/chan(零值nil不能直接用/运行时搭内脏 makeslice/makemap/makechan)、new给零值指针、`&T{}`一步构造惯用法、`[...]`数组值类型 vs `[]`slice窗口 → `chapters/06` 三节
+- ⬜ **下一步：Part10 语法糖 —— 复合字面量专题 / 指针自动解引用 / for range 编译还原，逐个推进，续写 chapters/06**
 
 完整章节见 `CLAUDE.md`（一语言基础 → 二语法糖 → 三数据结构 → 四控制流 → 五协程调度 → 六定时器 → 七并发控制 → 八接口 → 九内存 → 十工程）。
 
