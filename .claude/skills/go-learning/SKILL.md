@@ -29,7 +29,9 @@ description: "深入 Go 并发与语言哲学：用户提问/发表理解 → �
 - ✅ Part7 函数已学已沉淀：多返回值/命名返回值、一切传值(slice/map传"心脏")、闭包按引用共享 + Go1.22 循环变量新语义、defer(LIFO+参数立即求值+改命名返回值的时序) → `chapters/04-函数与方法.md`
 - ✅ Part8 语法糖(:= + 变参)已学已沉淀：`:=`⇔var简写、左侧至少一个新变量/err惯用法、复用vs遮蔽(同层大括号复用/跨层遮蔽)、`...`变参⇔slice、append真相 → `chapters/06-语法糖与编译还原.md`
 - ✅ Part9 make vs new 已学已沉淀：make只服务slice/map/chan(零值nil不能直接用/运行时搭内脏 makeslice/makemap/makechan)、new给零值指针、`&T{}`一步构造惯用法、`[...]`数组值类型 vs `[]`slice窗口 → `chapters/06` 三节
-- ⬜ **下一步：Part10 语法糖 —— 复合字面量专题 / 指针自动解引用 / for range 编译还原，逐个推进，续写 chapters/06**
+- ✅ Part10 指针可寻址性已学已沉淀：自动解引用/自动取地址、可寻址=固定房间(map元素会搬家/函数返回现炒/字符串字节共享只读)、map存指针惯用法、值接收者能用map元素、Go string≈string_view → `chapters/06` 四节
+- ✅ Part10.5 数组补遗已学已沉淀（用户发现漏项）：长度焊死在类型里、值拷贝不decay、数组可比较可当map key、slice才是日常 → 插入 `chapters/02` 四节(slice前)，slice/map 重编号为五六
+- ⬜ **下一步：Part11 语法糖 —— for range 编译还原 / 方法值方法表达式 / go-defer-select 编译还原，逐个推进，续写 chapters/06**
 
 完整章节见 `CLAUDE.md`（一语言基础 → 二语法糖 → 三数据结构 → 四控制流 → 五协程调度 → 六定时器 → 七并发控制 → 八接口 → 九内存 → 十工程）。
 
