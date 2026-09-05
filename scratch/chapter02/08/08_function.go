@@ -44,7 +44,7 @@ func demo() {
 	defer fmt.Println("  defer1:", i)    // 立即求值，存下 i=1
 	defer fmt.Println("  defer2:", i+10) // 立即求值，存下 11
 	i = 99                               // 改 i 不影响已求值的 defer
-	fmt.Println("  i已改成:", i)          // 函数体先执行，再跑 defer
+	fmt.Println("  i已改成:", i)            // 函数体先执行，再跑 defer
 }
 
 func f() (n int) {

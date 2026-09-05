@@ -12,7 +12,7 @@ func main() {
 
 	// 类型后置的好处
 	var f func(int) bool
-	fmt.Printf("func 零值=%v\n", f)
+	fmt.Printf("func 零值 nil? %v\n", f == nil)
 
 	// 短声明 + 类型推断
 	x := 42
