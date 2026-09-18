@@ -40,5 +40,5 @@ description: "深入 Go 并发与语言哲学：用户提问/发表理解 → �
 1. 源码优先：`$(go env GOROOT)/src/runtime/chan.go` 等，不凭记忆
 2. 卡住先跳代码：用流水线/比喻讲透心智模型，再回源码
 3. 每个概念写小程序验证（跑通/看崩溃/看输出）
-4. **例程姿势（2026-09-05 定）：新小节核心结论 → `verify/verify_test.go` 的 TestXxx 断言（go test ./verify/）；探索性 main 单独文件且一文件夹一个 main**
+4. **例程姿势（2026-09-05 定，后修正）：探索默认 go run 单文件例程看输出，纪律 = 一文件夹最多一个 func main（防 gopls 红波浪）；verify/ 断言是给"已学透结论"的回归保险（go test ./verify/ 自动判对错），非默认流程**
 5. 每个主题沉淀一个 HTML 网页课程到 `courses/`
